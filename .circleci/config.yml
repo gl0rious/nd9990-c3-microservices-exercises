@@ -1,9 +1,7 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/node:16.10
-
+    machine: true
     working_directory: ~/repo/lesson-3-independent-releases/exercises/travis_ci/
 
     steps:
