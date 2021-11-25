@@ -12,4 +12,8 @@ jobs:
             
       - run: npm install
 
-      - run: npm test
+      - run: docker --version
+      - run: docker build -t simple-node .
+      - run: docker tag simple-node majiduddev/debug-me:latest
+      - run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - run: docker push majiduddev/debug-me
